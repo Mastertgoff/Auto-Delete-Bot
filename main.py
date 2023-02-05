@@ -1,7 +1,13 @@
-
 from os import environ
 from pyrogram import idle
-
+from pyrogram.types import Message, InlineKeyboardButton, InlineKeyboardMarkup, CallbackQuery
+from pyrogram import Client, filters, errors, enums
+from asyncio import sleep
+from approvedb import add_user, add_group, all_users, all_groups, users, remove_user
+from pyrogram.errors import UserNotParticipant
+from pyrogram.errors.exceptions.flood_420 import FloodWait
+import random, asyncio
+from pyrogram.types import Message, User, ChatJoinRequest
 
 API_ID = int(environ.get('API_ID', "18302370"))
 API_HASH = environ.get('API_HASH', "03c2cced4dea9b1e96dce87558dd2381")

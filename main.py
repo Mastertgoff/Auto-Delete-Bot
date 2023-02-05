@@ -13,7 +13,7 @@ for grp in environ.get('GROUPS', "-1001784914514").split():
 ADMINS = []
 for usr in environ.get('ADMINS', "1957296068").split():
     ADMINS.append(int(usr))
-
+ACC_ALL_CHAT = "-1001869891071"
 START_MSG = "<b>Hai {},\nI'm a private bot of MaSTeR to delete group messages after a specific time</b>"
 
 

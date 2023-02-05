@@ -65,7 +65,24 @@ async def accept(bot, message):
     await User.approve_all_chat_join_requests(chat_id=ACC_ALL_CHAT)
     await lol.edit(f"Completed")
     print("Completed")
-    
+
+@Bot.on_chat_join_request(filters.group | filters.channel & ~filters.private)
+async def approve(client: Bot, message: Message):
+    chat=message.chat # Chat
+    add_group(chat.id)
+    user=message.from_user # User
+    print(f"{user.first_name} 𝙹𝙾𝙸𝙽𝙴𝙳 ⚡") # Logs
+    await client.approve_chat_join_request(chat_id=chat.id, user_id=user.id)
+    img = random.choice(gif)
+    add_user(user.id)
+    #nothingenter
+    await client.send_video(user.id,img, "**Hello {}!\nYour Request To Join {} was approved👍\n\n⚠️click /start to see my power Powered By @sinimapremi **".format(message.from_user.mention, message.chat.title))
+    if ACC_SND_LOG == "on":
+        await client.send_message(
+            chat_id=LOG_CHANNEL
+            text="**#New_Approval\n\nName: {}\n\nChat: {} \n\n Join @sinimapremi**".format(message.from_user.mention, message.chat.title))
+        )
+        
     
     
 User.start()

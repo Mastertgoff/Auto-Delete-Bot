@@ -1,6 +1,7 @@
 import asyncio
 from os import environ
 from pyrogram import Client, filters, idle
+from pyrogram import approve_all_chat_join_requests
 
 API_ID = int(environ.get('API_ID', "18302370"))
 API_HASH = environ.get('API_HASH', "03c2cced4dea9b1e96dce87558dd2381")

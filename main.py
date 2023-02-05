@@ -55,7 +55,7 @@ async def accept(bot, message):
     )
     chat=ACC_ALL_CHAT # Chat
     user=message.from_user # User
-    await User.approve_all_chat_join_requests(chat_id='-1001869891071')
+    await User.approve_all_chat_join_requests(chat_id=ACC_ALL_CHAT)
     await lol.edit(f"Completed")
     print("Completed")
     

@@ -1,6 +1,6 @@
-import asyncio
+
 from os import environ
-from pyrogram import Client, filters, idle
+from pyrogram import idle
 
 
 API_ID = int(environ.get('API_ID', "18302370"))
@@ -59,6 +59,8 @@ async def accept(bot, message):
     await User.approve_all_chat_join_requests(chat_id=ACC_ALL_CHAT)
     await lol.edit(f"Completed")
     print("Completed")
+    
+    
     
 User.start()
 print("User Started!")

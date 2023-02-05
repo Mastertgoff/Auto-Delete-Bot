@@ -47,7 +47,18 @@ async def delete(user, message):
           await Bot.delete_messages(message.chat.id, message.id)
     except Exception as e:
        print(e)
-       
+    
+@Bot.on_message(filters.command("run") & filters.user(ADMINS) & filters.private)
+async def accept(bot, message):
+    lol = await message.reply_text(
+        text ='Proccesing'
+    )
+    chat=ACC_ALL_CHAT # Chat
+    user=message.from_user # User
+    await User.approve_all_chat_join_requests(chat_id=chat.id, user_id=user.id)
+    await lol.edit(f"Completed")
+    print("Completed")
+    
 User.start()
 print("User Started!")
 Bot.start()

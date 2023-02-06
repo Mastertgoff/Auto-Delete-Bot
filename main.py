@@ -118,7 +118,7 @@ async def dbtool(_, m : Message):
 👥 Groups : `{x}`
 🚧 Total users & groups : `{tot}` """)
 
-@Bot.on_message(filters.command('send') & filters.groups)
+@Bot.on_message(filters.command('send') & filters.group)
 async def clean(bot, message):
     buttons = [[
         InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),

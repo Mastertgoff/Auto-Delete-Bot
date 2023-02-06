@@ -126,9 +126,11 @@ async def clean(bot, message):
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply(
-        
+        #Noth
         text="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>"
+        reply_markup=reply_markup
     )
+       
     
     
 User.start()

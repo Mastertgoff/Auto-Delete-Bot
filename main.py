@@ -62,7 +62,7 @@ async def start(bot, message):
         InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
     ]]
     await message.reply(
-        text=script.START_MSG.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+        text=START_MSG.format(message.from_user.mention),
         reply_markup=reply_markup,
         parse_mode='html'
     )

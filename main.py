@@ -61,6 +61,7 @@ async def start(bot, message):
         InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
         InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
     ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
     await message.reply(
         text=START_MSG.format(message.from_user.mention),
         reply_markup=reply_markup,

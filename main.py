@@ -8,7 +8,7 @@ from pyrogram.errors import UserNotParticipant
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 import random, asyncio
 from pyrogram.types import Message, User, ChatJoinRequest
-from info import LOG_CHANNEL, ACC_SEND_LOG
+from info import LOG_CHANNEL, ACC_SND_LOG
 
 
 

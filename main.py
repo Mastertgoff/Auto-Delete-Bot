@@ -118,15 +118,15 @@ async def dbtool(_, m : Message):
 👥 Groups : `{x}`
 🚧 Total users & groups : `{tot}` """)
 
-@Bot.on_message(filters.command('send') & filters.private)
+@Bot.on_message(filters.command('send') & filters.groups)
 async def clean(bot, message):
     buttons = [[
         InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
         InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
     ]]
     reply_markup = InlineKeyboardMarkup(buttons)
-    await bot.send_message(
-        chat_id=GROUPS,
+    await mesasage.reply(
+        
         text="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>"
     )
     

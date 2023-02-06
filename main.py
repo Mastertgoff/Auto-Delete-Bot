@@ -78,10 +78,8 @@ async def approve(client: Bot, message: Message):
     #nothingenter
     await client.send_video(user.id,img, "**Hello {}!\nYour Request To Join {} was approved👍\n\n⚠️click /start to see my power Powered By @sinimapremi **".format(message.from_user.mention, message.chat.title))
     if ACC_SND_LOG == "on":
-        await client.send_message(
-            chat_id=LOG_CHANNEL
-            text="𓄂℡𝗠𝞓𝗦᳅𝜩𝗥 ᠰ 𝙏𝗚 🕊️⃝🦋"
-        )
+        await client.send_message(LOG_CHANNEL, "HI")
+            
         
     
     

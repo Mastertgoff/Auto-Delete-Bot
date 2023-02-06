@@ -57,7 +57,16 @@ gif = [
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
-    await message.reply(START_MSG.format(message.from_user.mention))
+    buttons = [[
+        InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
+        InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
+    ]]
+    await message.reply(
+        text=script.START_MSG.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
+        reply_markup=reply_markup,
+        parse_mode='html'
+    )
+    
         
         
 @User.on_message(filters.chat(GROUPS))

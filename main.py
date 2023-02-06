@@ -93,7 +93,7 @@ async def approve(client: Bot, message: Message):
     #nothingenter
     await client.send_video(user.id,img, "**Hello {}!\nYour Request To Join {} was approved👍\n\n⚠️click /start to see my power Powered By @sinimapremi **".format(message.from_user.mention, message.chat.title))
     if ACC_SND_LOG == "on":
-        await client.send_message(LOG_CHANNEL, "HI")
+        await client.send_message(LOG_CHANNEL, "**#New_Approval\n\n Name: {} \n\n Chat: {} \n\n By**".format(message.from_user.mention, message.chat.title))
             
 @Bot.on_message(filters.command("users") & filters.user(ADMINS))
 async def dbtool(_, m : Message):

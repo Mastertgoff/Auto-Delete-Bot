@@ -1,7 +1,7 @@
 from pymongo import MongoClient
 from info import ACC_DB
 
-client = MongoClient[ACC_DB]
+client = MongoClient(ACC_DB)
 
 users = client['main']['users']
 groups = client['main']['groups']

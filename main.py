@@ -24,7 +24,7 @@ ADMINS = []
 for usr in environ.get('ADMINS', "1957296068").split():
     ADMINS.append(int(usr))
 ACC_ALL_CHAT = "-1001866499414"
-START_MSG = "<b>Hai {},\nI'm a private bot of MaSTeR to delete group messages after a specific time</b>"
+START_MSG = "<b>Hᴇʏ {} Iᴀᴍ Pʀɪᴠᴀᴛᴇ Bᴏᴛ Oғ <a href=https://t.me/Master_broi>Mᴀꜱᴛᴇʀ</a></b> Tᴏ Uꜱᴇ Aᴜᴛᴏ Dᴇʟᴇᴛᴇ Aᴜᴛᴏ Aᴄᴄᴇᴘᴛ Aɴᴅ Mᴏʀᴇ...</b>\n<b>Iᴀᴍ Oғғɪᴄɪᴀʟʏ Wᴏʀᴋɪɴɢ Fᴏʀ Fɪʟɪᴍ Hᴏᴍᴇ Gʀᴏᴜᴘ</b>\n<b>Dᴏɴ'ᴛ Wᴀꜱᴛᴇ Yᴏᴜʀ Tɪᴍᴇ Tᴏ Aᴅᴅɪɴɢ Yᴏᴜʀ Gʀᴏᴜᴘ.. Iᴀᴍ Wᴏʀᴋꜱ Oɴʟʏ Mʏ Gʀᴏᴜᴘ</b>"
 
 
 User = Client(name="user-account",

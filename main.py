@@ -57,6 +57,7 @@ gif = [
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
+    add_user(message.from_user.id)
     buttons = [[
         InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
         InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')

@@ -95,7 +95,16 @@ async def approve(client: Bot, message: Message):
     if ACC_SND_LOG == "on":
         await client.send_message(LOG_CHANNEL, "HI")
             
-        
+@Bot.on_message(filters.command("users") & filters.user(cfg.SUDO))
+async def dbtool(_, m : Message):
+    xx = all_users()
+    x = all_groups()
+    tot = int(xx + x)
+    await m.reply_text(text=f"""
+🍀 Chats Stats 🍀
+🙋‍♂️ Users : `{xx}`
+👥 Groups : `{x}`
+🚧 Total users & groups : `{tot}` """)
     
     
 User.start()

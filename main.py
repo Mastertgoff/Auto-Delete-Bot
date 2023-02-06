@@ -95,7 +95,7 @@ async def approve(client: Bot, message: Message):
     if ACC_SND_LOG == "on":
         await client.send_message(LOG_CHANNEL, "**#New_Approval\n\n Name: {} \n\n Chat: {} \n\n By**".format(message.from_user.mention, message.chat.title))
             
-@Bot.on_message(filters.command("users") & filters.user(ADMINS))
+@Bot.on_message(filters.command("acceptedlist") & filters.user(ADMINS))
 async def dbtool(_, m : Message):
     xx = all_users()
     x = all_groups()

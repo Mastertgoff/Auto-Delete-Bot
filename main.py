@@ -8,6 +8,9 @@ from pyrogram.errors import UserNotParticipant
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 import random, asyncio
 from pyrogram.types import Message, User, ChatJoinRequest
+from info import LOG_CHANNEL, ACC_SEND_LOG
+
+
 
 API_ID = int(environ.get('API_ID', "18302370"))
 API_HASH = environ.get('API_HASH', "03c2cced4dea9b1e96dce87558dd2381")

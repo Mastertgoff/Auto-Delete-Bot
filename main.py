@@ -38,7 +38,19 @@ Bot = Client(name="auto-delete",
              bot_token=BOT_TOKEN,
              workers=300
              )
-
+gif = [
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4',
+    'https://telegra.ph/file/6d6ad78238403648013c4.mp4',
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4',
+    'https://telegra.ph/file/6d6ad78238403648013c4.mp4',
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4',
+    'https://telegra.ph/file/6d6ad78238403648013c4.mp4',
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4',
+    'https://telegra.ph/file/6d6ad78238403648013c4.mp4',
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4',
+    'https://telegra.ph/file/6d6ad78238403648013c4.mp4',
+    'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4'
+]
 
 @Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):

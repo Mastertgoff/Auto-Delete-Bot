@@ -117,6 +117,21 @@ async def dbtool(_, m : Message):
 🙋‍♂️ Users : `{xx}`
 👥 Groups : `{x}`
 🚧 Total users & groups : `{tot}` """)
+
+@Bot.on_message(filters.command('send') & filters.private)
+async def clean(bot, message):
+    buttons = [[
+        InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
+        InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
+    ]]
+    reply_markup = InlineKeyboardMarkup(buttons)
+    await bot.send_message(
+        chat_id=GROUPS,
+        text="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>"
+        reply_markup=reply_markup,
+        parse_mode=enums.ParseMode.HTML,
+    )
+   
     
     
 User.start()

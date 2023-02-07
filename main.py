@@ -55,7 +55,7 @@ gif = [
     'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4'
 ]
 
-@Bot.on_message(filters.command('start') & filters.private & filters.group)
+@Bot.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     add_user(message.from_user.id)
     buttons = [[

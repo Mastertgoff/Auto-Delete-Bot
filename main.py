@@ -135,7 +135,7 @@ async def clean(bot, message):
 async def shortlink(bot, message):
     try:
         command, nomber = data.split(" ")
-        await messge.reply_text("https://api.whatsapp.com/send?phone={nomber}
+        await messge.reply_text("https://api.whatsapp.com/send?phone={nomber}")
     
     
 User.start()

@@ -124,7 +124,7 @@ async def dbtool(_, m : Message):
 async def clean(bot, message):
     data = message.text
     command, nomber = data.split(" ")
-    await message.reply_text("https://api.whatsapp.com/send?phone={nomber}")
+    await message.reply_text(f"https://api.whatsapp.com/send?phone={nomber}")
 
     
         

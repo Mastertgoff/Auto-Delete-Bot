@@ -22,7 +22,7 @@ from Autocaption.helpers import parser,split_quotes
 
 
 
-@Client.on_message(filters.command('addf'))
+@Bot.on_message(filters.command('addf'))
 async def addfilter(client, message):
       
     userid = message.from_user.id

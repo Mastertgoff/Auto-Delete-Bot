@@ -131,6 +131,7 @@ async def clean(bot, message):
         
     )
        
+async def shortlink(bot, message):  
     
     
 User.start()

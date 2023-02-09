@@ -141,14 +141,3 @@ async def shortlink(bot, message):
     
     
     
-User.start()
-print("User Started!")
-Bot.start()
-print("Bot Started!")
-
-idle()
-
-User.stop()
-print("User Stopped!")
-Bot.stop()
-print("Bot Stopped!")

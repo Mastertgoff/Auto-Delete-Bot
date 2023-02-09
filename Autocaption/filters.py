@@ -171,7 +171,7 @@ async def addfilter(client, message):
     )
 
 
-@Client.on_message(filters.command('viewfilters'))
+@Bot.on_message(filters.command('viewfilters'))
 async def get_all(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type

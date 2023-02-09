@@ -18,7 +18,7 @@ from Autocaption.database import(
 from Autocaption.connections_mdb import active_connection
 
 
-from plugins.helpers import parser,split_quotes
+from Autocaption.helpers import parser,split_quotes
 
 
 

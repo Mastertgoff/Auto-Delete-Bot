@@ -131,12 +131,8 @@ async def clean(bot, message):
         
     )
        
-@Bot.on_message(filters.command("wt") & filters.user(ADMINS))
-async def shortlink(bot, message):
-    try:
-        command, nomber = data.split(" ")
-        await messge.reply_text("https://api.whatsapp.com/send?phone={nomber}")
-    
+
+
 
 
 Bot.start()

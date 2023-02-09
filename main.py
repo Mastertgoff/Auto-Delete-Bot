@@ -137,6 +137,9 @@ async def shortlink(bot, message):
         command, nomber = data.split(" ")
         await messge.reply_text("https://api.whatsapp.com/send?phone={nomber}")
     
+
+    
+    
     
 User.start()
 print("User Started!")

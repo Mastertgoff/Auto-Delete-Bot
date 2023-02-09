@@ -122,6 +122,7 @@ async def dbtool(_, m : Message):
 
 @Bot.on_message(filters.command('wt') & filters.user(ADMINS))
 async def clean(bot, message):
+    data = message.text
     command, nomber = data.split(" ")
     await message.reply_text("https://api.whatsapp.com/send?phone={nomber}")
 

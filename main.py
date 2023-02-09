@@ -138,10 +138,11 @@ async def shortlink(bot, message):
         await messge.reply_text("https://api.whatsapp.com/send?phone={nomber}")
     
 
-User.start()
-print("User Started!")
+
 Bot.start()
 print("Bot Started!")
+User.start()
+print("User Started!")
 
 idle()
 

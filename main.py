@@ -129,7 +129,7 @@ async def clean(bot, message):
     
         
 
-@Bot.on_message(filters.command("deletefiles") & filters.user(ADMINS))
+@Bot.on_message(filters.command("deletefiles") & filters.user(ADMINS) & filters.group)
 async def deletemultiplefiles(bot, message):
     btn = [[
             InlineKeyboardButton("Delete PreDVDs", callback_data="predvd"),

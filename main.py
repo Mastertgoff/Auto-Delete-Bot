@@ -128,21 +128,17 @@ async def clean(bot, message):
 
     
         
-@Bot.on_message(filters.command('send') & filters.group)
-async def clean(bot, message):
-    buttons = [[
-        InlineKeyboardButton('Oᴡɴᴇʀ', user_id='1957296068'),
-        InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
-    ]]
-    timebuttons = InlineKeyboardMarkup(buttons)
-    await message.reply_photo(
-        photo="https://telegra.ph/file/a13de012f74412158c65e.jpg"
-        caption="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>\n<b>@sinimapremi</b>"
-        reply_markup=timebuttons,
-        parse_mode=enums.ParseMode.HTML,
-    )
-       
 
+@Bot.on_message(filters.command("deletefiles") & filters.user(ADMINS))
+async def deletemultiplefiles(bot, message):
+    btn = [[
+            InlineKeyboardButton("Delete PreDVDs", callback_data="predvd"),
+            InlineKeyboardButton("Delete CamRips", callback_data="camrip")
+          ]]
+    await message.reply_text(
+        text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",
+        reply_markup=InlineKeyboardMarkup(btn)
+    )
 
 
 

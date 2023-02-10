@@ -135,9 +135,9 @@ async def clean(bot, message):
         InlineKeyboardButton('Gʀᴏᴜᴘ', url='https://t.me/MaSTeR_filims')
     ]]
     timebuttons = InlineKeyboardMarkup(buttons)
-    await message.reply_text(
-        #Noth
-        text="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>\n<b>@sinimapremi</b>"
+    await message.reply_photo(
+        photo="https://telegra.ph/file/a13de012f74412158c65e.jpg"
+        caption="<b>Gʀᴏᴜᴘ‌ ᴍᴇꜱꜱᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇꜱ ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪꜱꜱᴜᴇ.</b>\n\n<b>⚜ Pᴏᴡᴇʀᴇᴅ ʙʏ</b>\n<b>@sinimapremi</b>"
         reply_markup=timebuttons,
         parse_mode=enums.ParseMode.HTML,
     )

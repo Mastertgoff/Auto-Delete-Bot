@@ -129,11 +129,11 @@ async def clean(bot, message):
     
         
 
-@Bot.on_message(filters.command("deletefiles") & filters.user(ADMINS) & filters.group)
+@Bot.on_message(filters.command("send") & filters.user(ADMINS))
 async def deletemultiplefiles(bot, message):
     btn = [[
-            InlineKeyboardButton("Delete PreDVDs", callback_data="predvd"),
-            InlineKeyboardButton("Delete CamRips", callback_data="camrip")
+            InlineKeyboardButton("Tɪᴍᴇ ⏰", callback_data="time"),
+            InlineKeyboardButton("Dᴀᴛᴇ 📅", callback_data="date")
           ]]
     await message.reply_text(
         text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",

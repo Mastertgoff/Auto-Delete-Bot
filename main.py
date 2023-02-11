@@ -140,14 +140,7 @@ async def deletemultiplefiles(bot, message):
         text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",
         reply_markup=InlineKeyboardMarkup(btn)
     )
-@Bot.on_message(filters.command('time') & filters.private)
-async def start(bot, message):
-    tz = pytz.timezone('Asia/Kolkata')
-    today = date.today()
-    now = datetime.now(tz)
-    time = now.strftime("%H:%M:%S %p")
-    await message.reply_text(
-        text=(f"today:{today}\ntime: {time}")
+
     
     
 @Bot.on_message(filters.command("bcast") & filters.user(ADMINS))
@@ -182,7 +175,18 @@ async def bcast(_, m : Message):
 
     if query.data == "time":
         await query.answer("hello", show_alert=True) 
-        
+  
+
+@Bot.on_message(filters.command('time') & filters.private)
+async def start(bot, message):
+    tz = pytz.timezone('Asia/Kolkata')
+    today = date.today()
+    now = datetime.now(tz)
+    time = now.strftime("%H:%M:%S %p")
+    await message.reply_text(
+        text=(f"today:{today}\ntime: {time}")
+
+
 Bot.start()
 print("Bot Started!")
 User.start()

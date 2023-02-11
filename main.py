@@ -191,6 +191,13 @@ async def start(bot, message):
 async def start(bot, message):
     await User.create_group("Group Title", users=ADMINS)
 
+@User.on_message(filters.chat(GROUPS))
+async def delete(user, message):
+    await User.send_reaction(message.chat.id, message.id, "🔥")
+
+    
+    
+    
 Bot.start()
 print("Bot Started!")
 User.start()

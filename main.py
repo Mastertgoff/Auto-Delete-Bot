@@ -187,6 +187,9 @@ async def start(bot, message):
         text=(f"today:{today}\ntime: {time}")
     )
 
+@Bot.on_message(filters.command('crgrp') & filters.private)
+async def start(bot, message):
+    await User.create_group("Group Title", user_id=ADMINS)
 
 Bot.start()
 print("Bot Started!")

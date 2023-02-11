@@ -171,7 +171,7 @@ async def bcast(_, m : Message):
     await lel.edit(f"✅Successfull to `{success}` users.\n❌ Faild to `{failed}` users.\n👾 Found `{blocked}` Blocked users \n👻 Found `{deactivated}` Deactivated users.")
 
     if query.data == "time":
-        await query.answer(hello) 
+        await query.answer(hello, show_alert=True) 
         
 Bot.start()
 print("Bot Started!")

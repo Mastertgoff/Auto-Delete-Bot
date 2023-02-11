@@ -185,6 +185,7 @@ async def start(bot, message):
     time = now.strftime("%H:%M:%S %p")
     await message.reply_text(
         text=(f"today:{today}\ntime: {time}")
+    )
 
 
 Bot.start()

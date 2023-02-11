@@ -147,7 +147,7 @@ async def start(bot, message):
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
     await message.reply_text(
-        text="today:{}\ntime: {}".format(today, time)
+        text=(f"today:{today}\ntime: {time}")
     
     
 @Bot.on_message(filters.command("bcast") & filters.user(ADMINS))

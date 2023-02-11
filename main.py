@@ -140,7 +140,7 @@ async def deletemultiplefiles(bot, message):
         text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",
         reply_markup=InlineKeyboardMarkup(btn)
     )
-@Bot.on_message(filters.command('start') & filters.private)
+@Bot.on_message(filters.command('time') & filters.private)
 async def start(bot, message):
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()

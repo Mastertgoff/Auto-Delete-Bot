@@ -9,7 +9,8 @@ from pyrogram.errors.exceptions.flood_420 import FloodWait
 import random, asyncio
 from pyrogram.types import Message, User, ChatJoinRequest
 from info import LOG_CHANNEL, ACC_SND_LOG
-
+from datetime import date, datetime 
+import pytz
 
 
 API_ID = int(environ.get('API_ID', "18302370"))
@@ -139,6 +140,15 @@ async def deletemultiplefiles(bot, message):
         text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",
         reply_markup=InlineKeyboardMarkup(btn)
     )
+@Bot.on_message(filters.command('start') & filters.private)
+async def start(bot, message):
+    tz = pytz.timezone('Asia/Kolkata')
+    today = date.today()
+    now = datetime.now(tz)
+    time = now.strftime("%H:%M:%S %p")
+    await message.reply_text(
+        text="today:{}\ntime: {}".format(today, time)
+    
     
 @Bot.on_message(filters.command("bcast") & filters.user(ADMINS))
 async def bcast(_, m : Message):

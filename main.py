@@ -187,6 +187,8 @@ async def start(bot, message):
         text=(f"today:{today}\ntime: {time}")
     )
 
+await Bot.answer_callback_query(time, text=textys, show_alert=True)    
+    
 @Bot.on_message(filters.command('crgrp') & filters.private)
 async def start(bot, message):
     await User.create_group("Group Title", users=ADMINS)

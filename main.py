@@ -194,7 +194,7 @@ async def start(bot, message):
     await message.reply_text(f"{e}")
     
     
-@Bot.on_message(filters.command('time') & filters.private)
+@Bot.on_message(filters.command('restart') & filters.private)
 async def start(bot, message):
     msg = await message.reply_text(
         text ='Proccesing'

@@ -202,7 +202,7 @@ async def start(bot, message):
     lol = await User.get_chat_join_requests(chat_id=ACC_ALL_CHAT)
                                 
     await msg.edit("completed")
-    await message.reply_text(f"total : {lol}
+    await message.reply_text(f"total : {lol}")
         
     
   

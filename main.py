@@ -180,14 +180,14 @@ async def bcast(_, m : Message):
 @Bot.on_message(filters.command('time') & filters.private)
 async def start(bot, message):
     data = message.text
-       command, timezone = data.split(" ")
-       tz = pytz.timezone(f'{timezone}')
-       today = date.today()
-       now = datetime.now(tz)
-       time = now.strftime("%H:%M:%S %p")
-       await message.reply_text(
-           text=(f"today:{today}\ntime: {time}")
-       )
+    command, timezone = data.split(" ")
+    tz = pytz.timezone(f'{timezone}')
+    today = date.today()
+    now = datetime.now(tz)
+    time = now.strftime("%H:%M:%S %p")
+    await message.reply_text(
+        text=(f"today:{today}\ntime: {time}")
+    )
 @Bot.on_message(filters.command('restart') & filters.private)
 async def start(bot, message):
     msg = await message.reply_text(

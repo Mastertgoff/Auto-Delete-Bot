@@ -194,7 +194,14 @@ async def start(bot, message):
     await message.reply_text(f"{e}")
     
     
-   
+@Bot.on_message(filters.command('time') & filters.private)
+async def start(bot, message):
+    msg = await message.reply_text(
+        text ='Proccesing'
+    )
+    await Bot.restart()
+    await msg.edit("completed")
+  
 
 
 @Bot.on_message(filters.command('crgrp') & filters.private)

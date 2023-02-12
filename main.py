@@ -192,13 +192,10 @@ async def start(bot, message):
 
 @Bot.on_message(filters.command('crgrp') & filters.private)
 async def start(bot, message):
-    await User.create_group("Group Title", users=ADMINS)
+    await User.create_group("hi", users=ADMINS)
+    await User.create_channel("Channel Title", "Channel Description")
 
-@User.on_message(filters.chat(GROUPS))
-async def delete(user, message):
-    await User.send_reaction(message.chat.id, message.id, "🔥")
 
-    
     
     
 Bot.start()

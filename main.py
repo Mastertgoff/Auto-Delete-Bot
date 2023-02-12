@@ -179,15 +179,22 @@ async def bcast(_, m : Message):
 
 @Bot.on_message(filters.command('time') & filters.private)
 async def start(bot, message):
-    data = message.text
-    command, timezone = data.split(" ")
-    tz = {timezone}
-    today = date.today()
-    now = datetime.now(tz)
-    time = now.strftime("%H:%M:%S %p")
-    await message.reply_text(
-        text=(f"today:{today}\ntime: {time}")
-    )
+    try:
+       data = message.text
+       command, timezone = data.split(" ")
+       tz = {timezone}
+       today = date.today()
+       now = datetime.now(tz)
+       time = now.strftime("%H:%M:%S %p")
+       await message.reply_text(
+           text=(f"today:{today}\ntime: {time}")
+       )
+    except Exception as e:
+       print(e)
+    await message.reply_text(f"{e}")
+    
+    
+   
 
 
 @Bot.on_message(filters.command('crgrp') & filters.private)

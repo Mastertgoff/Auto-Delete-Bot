@@ -228,7 +228,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Bot.on_message(filters.command(delf))
+@Bot.on_message(filters.command('delf'))
 async def deletefilter(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -273,7 +273,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Bot.on_message(filters.command(delall))
+@Bot.on_message(filters.command('delall'))
 async def delallconfirm(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type

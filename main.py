@@ -32,7 +32,7 @@ User = Client(name="user-account",
               session_string=SESSION,
               api_id=API_ID,
               api_hash=API_HASH,
-              plugins={"root": "plugins"},
+              #Removed
               workers=300
               )
 

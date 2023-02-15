@@ -9,7 +9,7 @@ from Autocaption.connections_mdb import add_connection, all_connections, if_acti
 
 
 
-@Client.on_message((filters.private | filters.group) & filters.command(connect))
+@Bot.on_message((filters.private | filters.group) & filters.command('connect'))
 async def addconnection(client,message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -79,7 +79,7 @@ async def addconnection(client,message):
         return
 
 
-@Client.on_message((filters.private | filters.group) & filters.command(disconnect))
+@Bot.on_message((filters.private | filters.group) & filters.command('disconnect'))
 async def deleteconnection(client,message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -101,7 +101,7 @@ async def deleteconnection(client,message):
             await message.reply_text("This chat isn't connected to me!\nDo /connect to connect.", quote=True)
 
 
-@Client.on_message(filters.private & filters.command(["connections"]))
+@Bot.on_message(filters.private & filters.command(["connections"]))
 async def connections(client,message):
     userid = message.from_user.id
 

@@ -98,7 +98,7 @@ async def accept(bot, message):
     print("Completed")
 
 @Client.on_chat_join_request(filters.group | filters.channel & ~filters.private)
-async def approve(client: Bot, message: Message):
+async def approve(client: Client, message: Message):
     chat=message.chat # Chat
     add_group(chat.id)
     user=message.from_user # User

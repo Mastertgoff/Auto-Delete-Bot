@@ -4,7 +4,7 @@ import io
 import pyrogram
 
 from pyrogram import filters
-from pyrogram import Client as Bot
+from pyrogram import Client 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
@@ -23,7 +23,7 @@ from plugins.helpers import parser,split_quotes
 
 
 
-@Bot.on_message(filters.command('addf'))
+@Client.on_message(filters.command('addf'))
 async def addfilter(client, message):
       
     userid = message.from_user.id
@@ -172,7 +172,7 @@ async def addfilter(client, message):
     )
 
 
-@Bot.on_message(filters.command('viewfilters'))
+@Client.on_message(filters.command('viewfilters'))
 async def get_all(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -229,7 +229,7 @@ async def get_all(client, message):
         parse_mode="md"
     )
         
-@Bot.on_message(filters.command('delf'))
+@Client.on_message(filters.command('delf'))
 async def deletefilter(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -274,7 +274,7 @@ async def deletefilter(client, message):
     await delete_filter(message, query, grp_id)
         
 
-@Bot.on_message(filters.command('delall'))
+@Client.on_message(filters.command('delall'))
 async def delallconfirm(client, message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -312,7 +312,7 @@ async def delallconfirm(client, message):
         )
 
 
-@Bot.on_message(filters.group & filters.text)
+@Client.on_message(filters.group & filters.text)
 async def give_filter(client,message):
     group_id = message.chat.id
     name = message.text

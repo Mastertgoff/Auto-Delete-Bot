@@ -3,14 +3,14 @@ import os
 
 
 from pyrogram import filters
-form pyrogram import Client as Bot
+form pyrogram import Client 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from database.connections_mdb import add_connection, all_connections, if_active, delete_connection
 
 
 
-@Bot.on_message((filters.private | filters.group) & filters.command('connect'))
+@Client.on_message((filters.private | filters.group) & filters.command('connect'))
 async def addconnection(client,message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -80,7 +80,7 @@ async def addconnection(client,message):
         return
 
 
-@Bot.on_message((filters.private | filters.group) & filters.command('disconnect'))
+@Client.on_message((filters.private | filters.group) & filters.command('disconnect'))
 async def deleteconnection(client,message):
     userid = message.from_user.id
     chat_type = message.chat.type
@@ -102,7 +102,7 @@ async def deleteconnection(client,message):
             await message.reply_text("This chat isn't connected to me!\nDo /connect to connect.", quote=True)
 
 
-@Bot.on_message(filters.private & filters.command(["connections"]))
+@Client.on_message(filters.private & filters.command(["connections"]))
 async def connections(client,message):
     userid = message.from_user.id
 

@@ -212,7 +212,7 @@ async def start(bot, message):
 
     
     
-Bot.start()
+Client.start()
 print("Bot Started!")
 User.start()
 print("User Started!")
@@ -221,7 +221,7 @@ idle()
 
 User.stop()
 print("User Stopped!")
-Bot.stop()
+Client.stop()
 print("Bot Stopped!")
     
     

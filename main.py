@@ -37,7 +37,7 @@ User = Client(name="user-account",
               )
 
 
-Bot = Client(name="auto-delete",
+Client = Client(name="auto-delete",
              api_id=API_ID,
              api_hash=API_HASH,
              bot_token=BOT_TOKEN,
@@ -58,7 +58,7 @@ gif = [
     'https://telegra.ph/file/7e38c0e9a6b6051199f92.mp4'
 ]
 
-@Bot.on_message(filters.command('start') & filters.private)
+@Client.on_message(filters.command('start') & filters.private)
 async def start(bot, message):
     add_user(message.from_user.id)
     buttons = [[
@@ -86,7 +86,7 @@ async def delete(user, message):
     except Exception as e:
        print(e)
     
-@Bot.on_message(filters.command("run") & filters.user(ADMINS) & filters.private)
+@Client.on_message(filters.command("run") & filters.user(ADMINS) & filters.private)
 async def accept(bot, message):
     lol = await message.reply_text(
         text ='Proccesing'
@@ -97,7 +97,7 @@ async def accept(bot, message):
     await lol.edit(f"Completed")
     print("Completed")
 
-@Bot.on_chat_join_request(filters.group | filters.channel & ~filters.private)
+@Client.on_chat_join_request(filters.group | filters.channel & ~filters.private)
 async def approve(client: Bot, message: Message):
     chat=message.chat # Chat
     add_group(chat.id)
@@ -111,7 +111,7 @@ async def approve(client: Bot, message: Message):
     if ACC_SND_LOG == "on":
         await client.send_message(LOG_CHANNEL, "**#New_Approval\n\n Name: {} \n\n Chat: {} \n\n By**".format(message.from_user.mention, message.chat.title))
             
-@Bot.on_message(filters.command("acceptedlist") & filters.user(ADMINS))
+@Client.on_message(filters.command("acceptedlist") & filters.user(ADMINS))
 async def dbtool(_, m : Message):
     xx = all_users()
     x = all_groups()
@@ -124,7 +124,7 @@ async def dbtool(_, m : Message):
     
 
 
-@Bot.on_message(filters.command('wt') & filters.user(ADMINS))
+@Client.on_message(filters.command('wt') & filters.user(ADMINS))
 async def clean(bot, message):
     data = message.text
     command, nomber = data.split(" ")
@@ -133,7 +133,7 @@ async def clean(bot, message):
     
         
 
-@Bot.on_message(filters.command("send") & filters.user(ADMINS))
+@Client.on_message(filters.command("send") & filters.user(ADMINS))
 async def deletemultiplefiles(bot, message):
     btn = [[
             InlineKeyboardButton("Tɪᴍᴇ ⏰", callback_data="time"),
@@ -146,7 +146,7 @@ async def deletemultiplefiles(bot, message):
 
     
     
-@Bot.on_message(filters.command("bcast") & filters.user(ADMINS))
+@Client.on_message(filters.command("bcast") & filters.user(ADMINS))
 async def bcast(_, m : Message):
     allusers = users
     lel = await m.reply_text("`⚡️ Processing...`")
@@ -179,7 +179,7 @@ async def bcast(_, m : Message):
     
   
 
-@Bot.on_message(filters.command('time') & filters.private)
+@Client.on_message(filters.command('time') & filters.private)
 async def start(bot, message):
     data = message.text
     command, timezone = data.split(" ")
@@ -190,7 +190,7 @@ async def start(bot, message):
     await message.reply_text(
         text=(f"today:{today}\ntime: {time}")
     )
-@Bot.on_message(filters.command('restart') & filters.private)
+@Client.on_message(filters.command('restart') & filters.private)
 async def start(bot, message):
     msg = await message.reply_text(
         text ='Proccesing'
@@ -204,7 +204,7 @@ async def start(bot, message):
   
 
 
-@Bot.on_message(filters.command('crgrp') & filters.private)
+@Client.on_message(filters.command('crgrp') & filters.private)
 async def start(bot, message):
     await User.create_group("hi", users=ADMINS)
     await User.create_channel("Channel Title", "Channel Description")

@@ -3,7 +3,7 @@ import os
 
 
 from pyrogram import filters
-form pyrogram import Client 
+from pyrogram import Client 
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 from database.connections_mdb import add_connection, all_connections, if_active, delete_connection

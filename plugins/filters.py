@@ -8,7 +8,7 @@ from pyrogram import Client
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 
-from database.filtersmdb import(
+from database.filtermdb import(
    add_filter,
    find_filter,
    get_filters,
@@ -19,7 +19,7 @@ from database.filtersmdb import(
 from database.connections_mdb import active_connection
 
 
-from plugins.helpers import parser,split_quotes
+from plugins.helpers import parser, split_quotes
 
 
 

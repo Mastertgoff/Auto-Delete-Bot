@@ -3,7 +3,8 @@ import re
 import io
 import pyrogram
 
-from pyrogram import filters, Client
+from pyrogram import filters
+from pyrogram import Client as Bot
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 
 

@@ -210,7 +210,13 @@ async def start(bot, message):
     await User.create_channel("Channel Title", "Channel Description")
 
 
-    
+@Client.on_message(filters.command('linkdls') & filters.private)
+async def start(bot, message):
+    data = message.text
+    command, cid, clink = data.split(" ")  
+    mrn = await Client.get_chat_invite_link(chat_id=f'{cid}', invite_link=f'{clink}')
+    await message.reply_text(f"details : {mrn}")
+                                            
     
 Client.start()
 print("Bot Started!")

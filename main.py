@@ -208,7 +208,7 @@ async def start(bot, message):
 async def start(bot, message):
     await User.create_group("hi", users=ADMINS)
     chnl = await User.create_channel("Channel Title", "Channel Description")
-    await User.set_chat_photo(chat_id=chnl.id, photo="AgACAgQAAxkBAAIcEGPvihlGz7saEfcycjsFsIefhdj5AAIkrzEbstm9UwgeAAFPRWcMZwEAAwIAA3MAAy4E")
+    await User.set_chat_photo(chat_id=chnl.id, photo=photo.file_id="AgACAgQAAxkBAAIcEGPvihlGz7saEfcycjsFsIefhdj5AAIkrzEbstm9UwgeAAFPRWcMZwEAAwIAA3MAAy4E")
     await message.reply_text(f"id : {chnl.id}")
 
 

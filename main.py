@@ -226,7 +226,7 @@ async def pm_next_page(bot, query):
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
-    await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+    await query.answer(f"Hᴇʏ Bʀᴏ👋\n\nCᴜʀʀᴇɴᴛ Tɪᴍᴇ Iɴ Iɴᴅɪᴀ : {time}", show_alert=True)
 
     
 Client.start()

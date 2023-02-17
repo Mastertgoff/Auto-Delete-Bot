@@ -219,7 +219,15 @@ async def start(bot, message):
     command, cid, clink = data.split(" ")  
     mrn = await Client.get_chat_invite_link(chat_id=f'{cid}', invite_link=f'{clink}')
     await message.reply_text(f"details : {mrn}")
-                                            
+                                           
+@Client.on_callback_query(filters.regex(r"^time"))
+async def pm_next_page(bot, query):
+    tz = pytz.timezone(f'{timezone}')
+    today = date.today()
+    now = datetime.now(tz)
+    time = now.strftime("%H:%M:%S %p")
+    await query.answer("You are using one of my old messages, please send the request again.", show_alert=True)
+
     
 Client.start()
 print("Bot Started!")

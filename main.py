@@ -222,7 +222,7 @@ async def start(bot, message):
                                            
 @Client.on_callback_query(filters.regex(r"^time"))
 async def pm_next_page(bot, query):
-    tz = pytz.timezone(f'{timezone}')
+    tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")

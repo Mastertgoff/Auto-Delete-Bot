@@ -207,7 +207,8 @@ async def start(bot, message):
 @Client.on_message(filters.command('crgrp') & filters.private)
 async def start(bot, message):
     await User.create_group("hi", users=ADMINS)
-    await User.create_channel("Channel Title", "Channel Description")
+    chnl = await User.create_channel("Channel Title", "Channel Description")
+    await message.reply_text(f"id : {chnl.id}")
 
 
 @Client.on_message(filters.command('linkdls') & filters.private)

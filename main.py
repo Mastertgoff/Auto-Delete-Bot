@@ -140,7 +140,11 @@ async def deletemultiplefiles(bot, message):
             InlineKeyboardButton("Dᴀᴛᴇ 📅", callback_data="date")
           ]]
     await message.reply_text(
-        text="<b>Select the type of files you want to delete !\n\nThis will delete 100 files from the database for the selected type.</b>",
+        text="<b>ɢʀᴏᴜᴘ‌ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇs ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇ.\n⚜ ᴘᴏᴡᴇʀᴇᴅ ʙʏ\n\n@Sinimapremi </b>",
+
+    
+
+
         reply_markup=InlineKeyboardMarkup(btn)
     )
 
@@ -228,7 +232,14 @@ async def pm_next_page(bot, query):
     time = now.strftime("%H:%M:%S %p")
     await query.answer(f"Hᴇʏ Bʀᴏ👋\n\nCᴜʀʀᴇɴᴛ Tɪᴍᴇ Iɴ Iɴᴅɪᴀ : {time}", show_alert=True)
 
-    
+@Client.on_callback_query(filters.regex(r"^date"))
+async def pm_next_parge(bot, query):
+    tz = pytz.timezone('Asia/Kolkata')
+    today = date.today()
+    now = datetime.now(tz)
+    time = now.strftime("%H:%M:%S %p")
+    await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}")
+   
 Client.start()
 print("Bot Started!")
 User.start()

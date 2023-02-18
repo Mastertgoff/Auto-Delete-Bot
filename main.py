@@ -234,7 +234,9 @@ async def pm_next_parge(bot, query):
     today = date.today()
     now = datetime.now(tz)
     time = now.strftime("%H:%M:%S %p")
-    await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}")
+    await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}", show_alert=True)
+
+ 
    
 Client.start()
 print("Bot Started!")

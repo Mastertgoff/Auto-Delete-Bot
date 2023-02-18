@@ -141,10 +141,6 @@ async def deletemultiplefiles(bot, message):
           ]]
     await message.reply_text(
         text="<b>ɢʀᴏᴜᴘ‌ ᴍᴇssᴀɢᴇ ᴡɪʟʟ ʙᴇ ᴀᴜᴛᴏᴍᴀᴛɪᴄᴀʟʟʏ ᴅᴇʟᴇᴛᴇᴅ ᴀғᴛᴇʀ 𝟷𝟻 ᴍɪɴᴜᴛᴇs ᴅᴜᴇ ᴛᴏ ᴄᴏᴘʏʀɪɢʜᴛ ɪssᴜᴇ.\n⚜ ᴘᴏᴡᴇʀᴇᴅ ʙʏ\n\n@Sinimapremi </b>",
-
-    
-
-
         reply_markup=InlineKeyboardMarkup(btn)
     )
 

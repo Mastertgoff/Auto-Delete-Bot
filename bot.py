@@ -82,7 +82,7 @@ async def delete(user, message):
        else:
           await User.send_reaction(message.chat.id, message.id, "🔥")
           await asyncio.sleep(TIME)
-          await Bot.delete_messages(message.chat.id, message.id)
+          await Client.delete_messages(message.chat.id, message.id)
     except Exception as e:
        print(e)
     

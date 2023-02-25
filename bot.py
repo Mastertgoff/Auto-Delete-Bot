@@ -86,7 +86,7 @@ async def delete(user, message):
     except Exception as e:
        print(e)
    
-@Client.on_message(filters.command("deleteallm") & filters.user(ADMINS) & filters.private)
+@Client.on_message(filters.command("deleteallm") & filters.user(ADMINS) & filters.group)
 async def accehpt(bot, message):
     await message.reply(
         text="Proccesing"

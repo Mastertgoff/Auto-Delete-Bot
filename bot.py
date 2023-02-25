@@ -86,8 +86,12 @@ async def delete(user, message):
     except Exception as e:
        print(e)
    
-@Client.on_message(filters.command("deleteall") & filters.user(ADMINS) & filters.private)
+@Client.on_message(filters.command("deleteallm") & filters.user(ADMINS) & filters.private)
 async def accehpt(bot, message):
+    await message.reply(
+        text="Proccesing"
+    )
+    #Hello
     numbers = []
     while True:
         try:

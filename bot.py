@@ -85,7 +85,26 @@ async def delete(user, message):
           await Client.delete_messages(message.chat.id, message.id)
     except Exception as e:
        print(e)
-    
+   
+@Client.on_message(filters.command("deleteall") & filters.user(ADMINS) & filters.private)
+async def accehpt(bot, message):
+    numbers = []
+    while True:
+        try:
+            async for m in User.iter_history(msg.chat.id):
+                numbers.append(m.message_id)
+            break
+        except Exception as e:
+           print(e)
+    id_lists = [numbers[i*100:(i+1)*100] for i in range((len(numbers)+100-1) // 100)]
+    for id_list in id_lists:
+        while True:
+            try:
+                await User.delete_messages(msg.chat.id, id_list)
+            except Exception as e:
+               print(e)
+ 
+
 @Client.on_message(filters.command("run") & filters.user(ADMINS) & filters.private)
 async def accept(bot, message):
     lol = await message.reply_text(

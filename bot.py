@@ -8,7 +8,7 @@ from pyrogram.errors import UserNotParticipant
 from pyrogram.errors.exceptions.flood_420 import FloodWait
 import random, asyncio
 from pyrogram.types import Message, User, ChatJoinRequest
-from info import LOG_CHANNEL, ACC_SND_LOG
+from info import LOG_CHANNEL, ACC_SND_LOG, CAPTION_TEXT
 from datetime import date, datetime 
 import pytz
 
@@ -259,7 +259,46 @@ async def pm_next_parge(bot, query):
     time = now.strftime("%H:%M:%S %p")
     await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}", show_alert=True)
 
- 
+@Client.on_message(filters.channel & (filters.document | filters.video | filters.audio ) & ~filters.edited, group=-1)
+async def editing(bot, message):
+      try:
+         media = message.document or message.video or message.audio
+         caption_text = CAPTION_TEXT
+      except:
+         caption_text = ""
+         pass 
+      if (message.document or message.video or message.audio): 
+          if message.caption:                        
+             file_caption = f"**{message.caption}**"                
+          else:
+             fname = media.file_name
+             filename = fname.replace("_", ".")
+             file_caption = f"`{filename}`"  
+              
+      try:
+          if caption_position == "top":
+             await bot.edit_message_caption(
+                 chat_id = message.chat.id, 
+                 message_id = message.message_id,
+                 caption = caption_text + "\n" + file_caption,
+                 parse_mode = "markdown"
+             )
+          elif caption_position == "bottom":
+             await bot.edit_message_caption(
+                 chat_id = message.chat.id, 
+                 message_id = message.message_id,
+                 caption = file_caption + "\n" + caption_text,
+                 parse_mode = "markdown"
+             )
+          elif caption_position == "nil":
+             await bot.edit_message_caption(
+                 chat_id = message.chat.id,
+                 message_id = message.message_id,
+                 caption = caption_text, 
+                 parse_mode = "markdown"
+             ) 
+      except:
+          pass
    
 Client.start()
 print("Bot Started!")

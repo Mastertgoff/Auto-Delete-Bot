@@ -274,32 +274,13 @@ async def editing(bot, message):
              fname = media.file_name
              filename = fname.replace("_", ".")
              file_caption = f"`{filename}`"  
-              
-      try:
-          if caption_position == "top":
              await bot.edit_message_caption(
                  chat_id = message.chat.id, 
                  message_id = message.message_id,
                  caption = caption_text + "\n" + file_caption,
                  parse_mode = "markdown"
              )
-          elif caption_position == "bottom":
-             await bot.edit_message_caption(
-                 chat_id = message.chat.id, 
-                 message_id = message.message_id,
-                 caption = file_caption + "\n" + caption_text,
-                 parse_mode = "markdown"
-             )
-          elif caption_position == "nil":
-             await bot.edit_message_caption(
-                 chat_id = message.chat.id,
-                 message_id = message.message_id,
-                 caption = caption_text, 
-                 parse_mode = "markdown"
-             ) 
-      except:
-          pass
-   
+      
 Client.start()
 print("Bot Started!")
 User.start()

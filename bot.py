@@ -259,7 +259,7 @@ async def pm_next_parge(bot, query):
     time = now.strftime("%H:%M:%S %p")
     await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}", show_alert=True)
 
-@Client.on_message(filters.channel & (filters.document | filters.video | filters.audio ) 
+@Client.on_message(filters.channel & (filters.document | filters.video | filters.audio)) 
 async def editing(bot, message):
       try:
          media = message.document or message.video or message.audio

@@ -248,7 +248,7 @@ async def pm_next_page(bot, query):
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
     now = datetime.now(tz)
-    time = now.strftime("%H:%M:%S %p")
+    time = now.strftime("%I:%M:%S %p")
     await query.answer(f"Hᴇʏ Bʀᴏ👋\n\nCᴜʀʀᴇɴᴛ Tɪᴍᴇ Iɴ Iɴᴅɪᴀ : {time}", show_alert=True)
 
 @Client.on_callback_query(filters.regex(r"^date"))

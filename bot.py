@@ -256,7 +256,7 @@ async def pm_next_parge(bot, query):
     tz = pytz.timezone('Asia/Kolkata')
     today = date.today()
     now = datetime.now(tz)
-    time = now.strftime("%H:%M:%S %p")
+    time = now.strftime("%I:%M:%S %p")
     await query.answer(f"Tᴏᴅᴀʏ 🎗 \n 🗓 : {today}", show_alert=True)
 
 @Client.on_message(filters.channel & (filters.document | filters.video | filters.audio)) 

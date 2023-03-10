@@ -19,7 +19,7 @@ def already_dbg(chat_id):
             return False
         return True
 
-def set_del_time(del_time)
+def set_del_time(del_time):
     time.insert_one({"del_time": str(del_time)})
 
 

@@ -25,6 +25,7 @@ def set_del_time(del_time):
 def get_del_time():
     get_time = time.find({})
     return get_time
+
 def add_user(user_id):
     in_db = already_db(user_id)
     if in_db:

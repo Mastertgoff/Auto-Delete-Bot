@@ -16,7 +16,7 @@ import pytz
 API_ID = int(environ.get('API_ID', "18302370"))
 API_HASH = environ.get('API_HASH', "03c2cced4dea9b1e96dce87558dd2381")
 BOT_TOKEN = environ.get('BOT_TOKEN', "6035089548:AAEND3aHeh6uTSVcERkuA7yGFOz6R8GU6nM")
-SESSION = environ.get('SESSION', "BQBiMZkAHOzLg8BILj4zwD3iMvEsXOMdo7zO2CcuyCRFYPtolAiekF3jUfIFAy73NUR0A2fqu-rO2T6aLtudJVot_JLP2DalV4UiesWfCKwM2xjmAN_22sIF4uQ30eu9S8NEz0FBwHHl7TTDmNcILvzWOuW5i4Wvi3m7nB7y9uZNc_Atn0ujSGqjVbXX9so8Fznd4FzTp1z37Wu_xLcNHzBUvcn_q-P-EOo6ackiJPsdLIKTo_4s9EQXpyca-NnqI34Iqeh6d4s0wsT_Mxn66kyhjQ2EuvTT3CSnyd48gBiGMlK6LHWhkQ3_hQM62brNuhAzH2jGZ7gLSkQ9O8U3DSKuOtZT-wAAAAB0qffEAA")
+SESSION = environ.get('SESSION', "")
 TIME = environ.get('TIME', 600)
 GROUPS = []
 for grp in environ.get('GROUPS', "-1001784914514").split():

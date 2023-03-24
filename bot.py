@@ -24,7 +24,7 @@ for grp in environ.get('GROUPS', "-1001784914514").split():
 ADMINS = []
 for usr in environ.get('ADMINS', "1957296068").split():
     ADMINS.append(int(usr))
-ACC_ALL_CHAT = "-1001866499414"
+ACC_ALL_CHAT = "-1001622696663"
 START_MSG = "<b>Hᴇʏ {} Iᴀᴍ Pʀɪᴠᴀᴛᴇ Bᴏᴛ Mᴀꜱᴛᴇʀ Oғ Tᴏ Uꜱᴇ Aᴜᴛᴏ Dᴇʟᴇᴛᴇ Aᴜᴛᴏ Aᴄᴄᴇᴘᴛ Aɴᴅ Mᴏʀᴇ...</b>\n<b>Iᴀᴍ Oғғɪᴄɪᴀʟʏ Wᴏʀᴋɪɴɢ Fᴏʀ Fɪʟɪᴍ Hᴏᴍᴇ Gʀᴏᴜᴘ</b>\n<b>Dᴏɴ'ᴛ Wᴀꜱᴛᴇ Yᴏᴜʀ Tɪᴍᴇ Tᴏ Aᴅᴅɪɴɢ Yᴏᴜʀ Gʀᴏᴜᴘ.. Iᴀᴍ Wᴏʀᴋꜱ Oɴʟʏ Mʏ Gʀᴏᴜᴘ</b>"
 
 
